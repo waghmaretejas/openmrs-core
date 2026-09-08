@@ -63,6 +63,7 @@ import org.openmrs.api.VisitService;
 import org.openmrs.api.context.Context;
 import org.openmrs.api.db.PatientDAO;
 import org.openmrs.api.db.hibernate.HibernateUtil;
+import org.openmrs.collection.ListPart;
 import org.openmrs.parameter.EncounterSearchCriteria;
 import org.openmrs.parameter.EncounterSearchCriteriaBuilder;
 import org.openmrs.parameter.MedicationDispenseCriteria;
@@ -497,15 +498,14 @@ public class PatientServiceImpl extends BaseOpenmrsService implements PatientSer
 
 	@Override
 	@Transactional(readOnly = true)
-	public org.openmrs.collection.ListPart<Patient> getPatientsAndCount(String query, Integer start, Integer length)
-	        throws APIException {
+	public ListPart<Patient> getPatientsAndCount(String query, Integer start, Integer length) throws APIException {
 		return dao.getPatientsAndCount(query, start, length);
 	}
 
 	@Override
 	@Transactional(readOnly = true)
-	public org.openmrs.collection.ListPart<Patient> getPatientsAndCount(String query, boolean includeVoided, Integer start,
-	        Integer length) throws APIException {
+	public ListPart<Patient> getPatientsAndCount(String query, boolean includeVoided, Integer start, Integer length)
+	        throws APIException {
 		return dao.getPatientsAndCount(query, includeVoided, start, length);
 	}
 

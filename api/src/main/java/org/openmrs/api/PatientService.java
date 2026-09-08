@@ -508,7 +508,7 @@ public interface PatientService extends OpenmrsService {
 	 * @param length the maximum number of patients to return
 	 * @return the patient page and deduplicated total count
 	 * @throws APIException
-	 * @since 1.11
+	 * @since 3.0.0
 	 */
 	@Authorized({ PrivilegeConstants.GET_PATIENTS })
 	public ListPart<Patient> getPatientsAndCount(String query, Integer start, Integer length) throws APIException;
@@ -522,7 +522,7 @@ public interface PatientService extends OpenmrsService {
 	 * @param length the maximum number of patients to return
 	 * @return the patient page and deduplicated total count
 	 * @throws APIException
-	 * @since 1.11
+	 * @since 3.0.0
 	 */
 	@Authorized({ PrivilegeConstants.GET_PATIENTS })
 	public ListPart<Patient> getPatientsAndCount(String query, boolean includeVoided, Integer start, Integer length)

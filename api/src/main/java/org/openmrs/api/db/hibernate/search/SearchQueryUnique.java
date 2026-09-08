@@ -765,7 +765,9 @@ public class SearchQueryUnique<T, R> {
 						break;
 					}
 				}
-
+				if (pageFrozen && countExceededCap) {
+					break;
+				}
 				chunk = scroll.next();
 			}
 		}
